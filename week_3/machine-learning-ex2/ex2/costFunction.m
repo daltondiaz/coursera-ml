@@ -20,11 +20,12 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+% hypothesis
+h = sigmoid(X * theta);
 
-
-
-
-
+% cost function in logistic regression
+J = (1/m) * sum(-y .* log(h) - (1 - y) .* log(1 - h));
+grad = (1/m) * X' * (h - y); 
 
 
 % =============================================================
